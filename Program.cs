@@ -6,62 +6,78 @@ namespace ProjetoCalculadoraBarbara
     {
         static void Main(string[] args)
         {
-            double primeiron, segundon, result, n; // n = número
-            string operacao, vlusuario;
-            bool vlvalido, terminar; // vl = valor
-           
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine(" ----- CALCULADORA <3 ----- \n");
-            Console.ReadKey();
+            double primeiron=0, segundon=0, result=0, n=0; // n = número
+            string op, vlusuario; // op = operação
+            bool vlvalido=false; // vl = valor
+        
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine(" ----- CALCULADORA <3 ----- ");
             
             Console.ResetColor();
 
-            Console.WriteLine("Digite o primeiro número:  ");
+            Console.Write("Olá usuário! Bem-vindo(a) a ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine ("calculadora <3");
+
+            Console.ResetColor();
+
+            Console.WriteLine("Pressione enter para continuar.\n ");
+            Console.ReadKey();
+
+            Console.Write("Digite o primeiro número:.....  ");
             vlusuario = Console.ReadLine();
 
             vlvalido = double.TryParse(vlusuario, out n);
 
-            while (!terminar)
+            string tecla = "";
+            while(tecla != "!")
 
-            { 
+            {
 
              if (vlvalido)
 
              {
               primeiron = Math.Round(double.Parse(vlusuario), 5);
-              terminar = false;
              }
            
              else
 
              {
               Console.ForegroundColor = ConsoleColor.Red;
-              Console.WriteLine("VALOR INVÁLIDO. ");
-              terminar = true;
+              Console.Write("NÚMERO INVÁLIDO. ");
+              Console.ResetColor();
+              Console.WriteLine($" Pressione enter: ");
+              Console.ReadKey();
+              Environment.Exit(1);
+
              }
 
-              Console.WriteLine("Digite a operação desejada (+, -, *, /, %): ");
-              operacao = Console.ReadLine();
+              Console.Write("Digite a operação desejada (+, -, *, /, %):..... ");
+              op = Console.ReadLine();
 
-              Console.WriteLine("Digite o segundo número: ");
+              Console.Write("Digite o segundo número:..... ");
               vlusuario = Console.ReadLine();
      
              if (vlvalido)
 
              {
               segundon = Math.Round(double.Parse(vlusuario), 5);
-              terminar = false;
              }
             
              else
 
              {
               Console.ForegroundColor = ConsoleColor.Red;
-              Console.WriteLine("VALOR INVÁLIDO. ");
-              terminar = true;
+              Console.WriteLine("NÚMERO INVÁLIDO. ");
+              Console.ResetColor();
+              Console.WriteLine($" Pressione enter: ");
+              Console.ReadKey();
+              Environment.Exit(1);
+
              }
 
-             switch (operacao)
+             switch (op)
 
              {
               case "+":
@@ -85,7 +101,7 @@ namespace ProjetoCalculadoraBarbara
                   break;
 
               case "%":
-                  result = primeiron % segundon ;
+                  result = (primeiron * segundon) / 100 ;
                   Console.WriteLine($"{primeiron} % {segundon} = {result}");
                   break;
 
@@ -93,11 +109,17 @@ namespace ProjetoCalculadoraBarbara
                   Console.ForegroundColor = ConsoleColor.Red;
                   Console.Write($"OPERAÇÃO INVÁLIDA. ");
                   Console.ResetColor();
-                  Console.WriteLine($"Pressione enter: ");
+                  Console.WriteLine($" Pressione enter: ");
                   Console.ReadKey();
                   Environment.Exit(1);
                   break;
-              }
+             }  
+
+             Console.WriteLine("Digite ! para sair ou qualquer outra tecla para fazer outra operação: ");
+             tecla = Console.ReadLine();  
+             
+             }
+             
               Console.BackgroundColor = ConsoleColor.White;
               Console.ForegroundColor = ConsoleColor.Black;
               Console.Write("Obrigada por utilizar o software");
@@ -106,13 +128,12 @@ namespace ProjetoCalculadoraBarbara
               Console.Write(" <3");
               Console.BackgroundColor = ConsoleColor.White;
               Console.ForegroundColor = ConsoleColor.Black;
-              Console.Write("!");
+              Console.Write(" !");
               Console.ResetColor();
               Console.WriteLine(" Pressione enter para finalizar: ");
               Console.ReadKey();
               Environment.Exit(0);
-              
-             }
+
         }
     }
 }
