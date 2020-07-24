@@ -6,9 +6,9 @@ namespace ProjetoCalculadoraBarbara
     {
         static void Main(string[] args)
         {
-            double primeiron, segundon, result, n; // n = número
+            double primeiron = 0, segundon = 0, result = 0, n = 0; // n = número
             string operacao, vlusuario;
-            bool vlvalido, terminar; // vl = valor
+            bool vlvalido = false, terminar = false; // vl = valor
            
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(" ----- CALCULADORA <3 ----- \n");
@@ -46,6 +46,8 @@ namespace ProjetoCalculadoraBarbara
               Console.WriteLine("Digite o segundo número: ");
               vlusuario = Console.ReadLine();
      
+              vlvalido = double.TryParse(vlusuario, out n);
+
              if (vlvalido)
 
              {
