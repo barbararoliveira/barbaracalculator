@@ -30,8 +30,45 @@ namespace ProjetoCalculadoraBarbara
 
             {
 
-             Console.Write("Escolha a ação desejada [+] [-] [*] [/] [%] [1 (exponenciação)] [2 (radiciação)] [C (créditos)] [F (finalizar)].....: ");
+             Console.Write("Escolha a ação desejada [+] [-] [*] [/] [%] [1 (exponenciação)] [2 (raiz quadrada)] [; (créditos)] [. (finalizar)].....: ");
              op = Console.ReadLine();
+
+             switch (op)
+
+             {
+              case ";":
+                  Console.WriteLine("Este programa foi desenvolvido pela aluna da Etec Adolpho Berezin Bárbara Oliveira, ");
+                  Console.WriteLine("instruída pelos professores Ermogenes Palacio e Diego Neri.");
+                  Console.WriteLine("Link do site: ");
+                  Console.WriteLine("Link do projeto no GitHub: https://github.com/barbararoliveira/CalculadoraBarbara");
+                  Environment.Exit(-1);
+                  break;
+
+              case ".":
+                  Console.BackgroundColor = ConsoleColor.White;
+                  Console.ForegroundColor = ConsoleColor.Black;
+                  Console.Write("Obrigada por utilizar o software");
+                  Console.BackgroundColor = ConsoleColor.White;
+                  Console.ForegroundColor = ConsoleColor.Red;
+                  Console.Write(" <3");
+                  Console.BackgroundColor = ConsoleColor.White;
+                  Console.ForegroundColor = ConsoleColor.Black;
+                  Console.Write(" !");
+                  Console.ResetColor();
+                  Console.WriteLine(" Pressione enter para finalizar: ");
+                  Console.ReadKey();
+                  Environment.Exit(0);
+                  break;
+
+              case "2":
+                  double valor, result1;
+                  Console.Write("digite o valor.....: ");
+                  valor = Convert.ToDouble(Console.ReadLine());
+                  result1 = Math.Sqrt(valor);
+                  Console.WriteLine($"= {result1}");
+                  Environment.Exit(-1);
+                  break;
+             }
 
              Console.Write("Digite o primeiro número.....:  ");
              vlusuario = Console.ReadLine();
@@ -51,9 +88,8 @@ namespace ProjetoCalculadoraBarbara
                Console.ResetColor();
                Console.WriteLine($" Pressione enter: ");
                Console.ReadKey();
-               Environment.Exit(1);
+               Environment.Exit(-1);
               }
-
 
                Console.Write("Digite o segundo número.....: ");
                vlusuario = Console.ReadLine();
@@ -72,7 +108,7 @@ namespace ProjetoCalculadoraBarbara
                Console.ResetColor();
                Console.WriteLine($" Pressione enter: ");
                Console.ReadKey();
-               Environment.Exit(1);
+               Environment.Exit(-1);
               }
 
                switch (op)
@@ -80,39 +116,33 @@ namespace ProjetoCalculadoraBarbara
               {
                case "+":
                    result = primeiron + segundon;
-                   Console.WriteLine($"{primeiron} + {segundon} = {result}");
+                   Console.WriteLine($"{primeiron} + {segundon} = {result}\n");
                    break;
 
                case "-":
                    result = primeiron - segundon ;
-                   Console.WriteLine($"{primeiron} - {segundon} = {result}");
+                   Console.WriteLine($"{primeiron} - {segundon} = {result}\n");
                    break;
 
                case "*":
                    result = primeiron * segundon ;
-                   Console.WriteLine($"{primeiron} * {segundon} = {result}");
+                   Console.WriteLine($"{primeiron} * {segundon} = {result}\n");
                    break;
 
                case "/":
-                   result = primeiron / segundon ;
-                   Console.WriteLine($"{primeiron} / {segundon} = {result}");
+                   result = primeiron / segundon;
+                   Console.WriteLine($"{primeiron} / {segundon} = {result}\n");
                    break;
 
                case "%":
                    result = (primeiron * segundon) / 100 ;
-                   Console.WriteLine($"{primeiron} % {segundon} = {result}");
+                   Console.WriteLine($"{primeiron} % {segundon} = {result}\n");
                    break;
 
                case "1":
                    result = Math.Pow(primeiron, segundon);
-                   Console.WriteLine($"{primeiron} ^ {segundon} = {result}");
+                   Console.WriteLine($"{primeiron} ^ {segundon} = {result}\n");
                    break;
-
-               case "2":
-                   result = Math.Pow(primeiron, (1 / segundon) );
-                   Console.WriteLine($"= {result}");
-                   break;
-
 
                default:
                    Console.ForegroundColor = ConsoleColor.Red;
@@ -120,11 +150,10 @@ namespace ProjetoCalculadoraBarbara
                    Console.ResetColor();
                    Console.WriteLine($" Pressione enter: ");
                    Console.ReadKey();
-                   Environment.Exit(1);
+                   Environment.Exit(-1);
                    break;
-              }  
+               }  
             
-
              Console.WriteLine("Digite . para sair ou qualquer outra tecla para retornar ao menu: ");
              tecla = Console.ReadLine();  
              
@@ -143,7 +172,6 @@ namespace ProjetoCalculadoraBarbara
               Console.WriteLine(" Pressione enter para finalizar: ");
               Console.ReadKey();
               Environment.Exit(0);
-
         }
     }
 }
