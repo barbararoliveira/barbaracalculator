@@ -30,89 +30,102 @@ namespace ProjetoCalculadoraBarbara
 
             {
 
-            Console.Write("Digite o primeiro número:.....  ");
-            vlusuario = Console.ReadLine();
-            vlvalido = double.TryParse(vlusuario, out n);
+             Console.Write("Escolha a ação desejada [+] [-] [*] [/] [%] [1 (exponenciação)] [2 (radiciação)] [C (créditos)] [F (finalizar)].....: ");
+             op = Console.ReadLine();
 
-             if (vlvalido)
+             Console.Write("Digite o primeiro número.....:  ");
+             vlusuario = Console.ReadLine();
+             vlvalido = double.TryParse(vlusuario, out n);
 
-             {
-              primeiron = Math.Round(double.Parse(vlusuario), 5);
-             }
+               if (vlvalido)
+
+              {
+               primeiron = Math.Round(double.Parse(vlusuario), 5);
+              }
            
-             else
+               else
 
-             {
-              Console.ForegroundColor = ConsoleColor.Red;
-              Console.Write("NÚMERO INVÁLIDO. ");
-              Console.ResetColor();
-              Console.WriteLine($" Pressione enter: ");
-              Console.ReadKey();
-              Environment.Exit(1);
-             }
+              {
+               Console.ForegroundColor = ConsoleColor.Red;
+               Console.Write("NÚMERO INVÁLIDO. ");
+               Console.ResetColor();
+               Console.WriteLine($" Pressione enter: ");
+               Console.ReadKey();
+               Environment.Exit(1);
+              }
 
-              Console.Write("Digite a operação desejada (+, -, *, /, %):..... ");
-              op = Console.ReadLine();
 
-              Console.Write("Digite o segundo número:..... ");
-              vlusuario = Console.ReadLine();
+               Console.Write("Digite o segundo número.....: ");
+               vlusuario = Console.ReadLine();
      
-             if (vlvalido)
+               if (vlvalido)
 
-             {
-              segundon = Math.Round(double.Parse(vlusuario), 5);
-             }
+              {
+               segundon = Math.Round(double.Parse(vlusuario), 5);
+              }
             
-             else
+               else
 
-             {
-              Console.ForegroundColor = ConsoleColor.Red;
-              Console.WriteLine("NÚMERO INVÁLIDO. ");
-              Console.ResetColor();
-              Console.WriteLine($" Pressione enter: ");
-              Console.ReadKey();
-              Environment.Exit(1);
-             }
+              {
+               Console.ForegroundColor = ConsoleColor.Red;
+               Console.WriteLine("NÚMERO INVÁLIDO. ");
+               Console.ResetColor();
+               Console.WriteLine($" Pressione enter: ");
+               Console.ReadKey();
+               Environment.Exit(1);
+              }
 
-             switch (op)
+               switch (op)
 
-             {
-              case "+":
-                  result = primeiron + segundon;
-                  Console.WriteLine($"{primeiron} + {segundon} = {result}");
-                  break;
+              {
+               case "+":
+                   result = primeiron + segundon;
+                   Console.WriteLine($"{primeiron} + {segundon} = {result}");
+                   break;
 
-              case "-":
-                  result = primeiron - segundon ;
-                  Console.WriteLine($"{primeiron} - {segundon} = {result}");
-                  break;
+               case "-":
+                   result = primeiron - segundon ;
+                   Console.WriteLine($"{primeiron} - {segundon} = {result}");
+                   break;
 
-              case "*":
-                  result = primeiron * segundon ;
-                  Console.WriteLine($"{primeiron} * {segundon} = {result}");
-                  break;
+               case "*":
+                   result = primeiron * segundon ;
+                   Console.WriteLine($"{primeiron} * {segundon} = {result}");
+                   break;
 
-              case "/":
-                  result = primeiron / segundon ;
-                  Console.WriteLine($"{primeiron} / {segundon} = {result}");
-                  break;
+               case "/":
+                   result = primeiron / segundon ;
+                   Console.WriteLine($"{primeiron} / {segundon} = {result}");
+                   break;
 
-              case "%":
-                  result = (primeiron * segundon) / 100 ;
-                  Console.WriteLine($"{primeiron} % {segundon} = {result}");
-                  break;
+               case "%":
+                   result = (primeiron * segundon) / 100 ;
+                   Console.WriteLine($"{primeiron} % {segundon} = {result}");
+                   break;
 
-              default:
-                  Console.ForegroundColor = ConsoleColor.Red;
-                  Console.Write($"OPERAÇÃO INVÁLIDA. ");
-                  Console.ResetColor();
-                  Console.WriteLine($" Pressione enter: ");
-                  Console.ReadKey();
-                  Environment.Exit(1);
-                  break;
-             }  
+               case "1":
+                   result = Math.Pow(primeiron, segundon);
+                   Console.WriteLine($"{primeiron} ^ {segundon} = {result}");
+                   break;
 
-             Console.WriteLine("Digite . para sair ou qualquer outra tecla para fazer outra operação: ");
+               case "2":
+                   result = Math.Pow(primeiron, (1 / segundon) );
+                   Console.WriteLine($"= {result}");
+                   break;
+
+
+               default:
+                   Console.ForegroundColor = ConsoleColor.Red;
+                   Console.Write($"OPERAÇÃO INVÁLIDA. ");
+                   Console.ResetColor();
+                   Console.WriteLine($" Pressione enter: ");
+                   Console.ReadKey();
+                   Environment.Exit(1);
+                   break;
+              }  
+            
+
+             Console.WriteLine("Digite . para sair ou qualquer outra tecla para retornar ao menu: ");
              tecla = Console.ReadLine();  
              
             }
