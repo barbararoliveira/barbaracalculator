@@ -16,7 +16,7 @@ namespace ProjetoCalculadoraBarbara
             
             Console.ResetColor();
 
-            Console.Write("Olá usuário! Bem-vindo(a) a ");
+            Console.Write("Olá! Bem-vindo(a) a ");
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine ("calculadora <3");
 
@@ -25,15 +25,14 @@ namespace ProjetoCalculadoraBarbara
             Console.WriteLine("Pressione enter para continuar.\n ");
             Console.ReadKey();
 
-            Console.Write("Digite o primeiro número:.....  ");
-            vlusuario = Console.ReadLine();
-
-            vlvalido = double.TryParse(vlusuario, out n);
-
             string tecla = "";
-            while(tecla != "!")
+            while(tecla != ".")
 
             {
+
+            Console.Write("Digite o primeiro número:.....  ");
+            vlusuario = Console.ReadLine();
+            vlvalido = double.TryParse(vlusuario, out n);
 
              if (vlvalido)
 
@@ -50,7 +49,6 @@ namespace ProjetoCalculadoraBarbara
               Console.WriteLine($" Pressione enter: ");
               Console.ReadKey();
               Environment.Exit(1);
-
              }
 
               Console.Write("Digite a operação desejada (+, -, *, /, %):..... ");
@@ -74,7 +72,6 @@ namespace ProjetoCalculadoraBarbara
               Console.WriteLine($" Pressione enter: ");
               Console.ReadKey();
               Environment.Exit(1);
-
              }
 
              switch (op)
@@ -115,10 +112,10 @@ namespace ProjetoCalculadoraBarbara
                   break;
              }  
 
-             Console.WriteLine("Digite ! para sair ou qualquer outra tecla para fazer outra operação: ");
+             Console.WriteLine("Digite . para sair ou qualquer outra tecla para fazer outra operação: ");
              tecla = Console.ReadLine();  
              
-             }
+            }
              
               Console.BackgroundColor = ConsoleColor.White;
               Console.ForegroundColor = ConsoleColor.Black;
