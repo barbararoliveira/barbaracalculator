@@ -39,7 +39,7 @@ namespace ProjetoCalculadoraBarbara
               case ";":
                   Console.Write("Este programa foi desenvolvido pela aluna da Etec Adolpho Berezin Bárbara Oliveira, ");
                   Console.WriteLine("instruída pelos professores Ermogenes Palacio e Diego Neri.");
-                  Console.WriteLine("Link do site: https://barbararoliveira.github.io/CalculadoraBarbara/. ");
+                  Console.WriteLine("Link do site: https://barbararoliveira.github.io/barbaracalculator/ ");
                   Console.WriteLine("Pressione enter: ");
                   Console.ReadKey();
                   Environment.Exit(-1);
