@@ -60,10 +60,10 @@ Gostei muito do resultado final (mesmo ainda sentindo que posso melhorar muito),
 
 ## Agradecimentos
 
-- [Etec Adolpho Berezin](http://https://eteab.com.br/)
-- [Professor Ermogenes Palacio](http://https://github.com/ermogenes)
-- [Professor Diego Neri](http://https://github.com/diegoneri)
-- [Dev C#](http://https://github.com/barbararoliveira/CalculadoraBarbara)
+- [Etec Adolpho Berezin](https://eteab.com.br/)
+- [Professor Ermogenes Palacio](https://github.com/ermogenes)
+- [Professor Diego Neri](https://github.com/diegoneri)
+- [Dev C#](https://github.com/barbararoliveira/CalculadoraBarbara)
 
 ---
 Todos os direitos reservados. PIRATARIA É CRIME.
