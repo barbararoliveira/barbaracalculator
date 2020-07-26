@@ -40,7 +40,8 @@ namespace ProjetoCalculadoraBarbara
                   Console.WriteLine("Este programa foi desenvolvido pela aluna da Etec Adolpho Berezin Bárbara Oliveira, ");
                   Console.WriteLine("instruída pelos professores Ermogenes Palacio e Diego Neri.");
                   Console.WriteLine("Link do site: ");
-                  Console.WriteLine("Link do projeto no GitHub: https://github.com/barbararoliveira/CalculadoraBarbara");
+                  Console.WriteLine("Pressione enter: ");
+                  Console.ReadKey();
                   Environment.Exit(-1);
                   break;
 
@@ -66,6 +67,8 @@ namespace ProjetoCalculadoraBarbara
                   valor = Convert.ToDouble(Console.ReadLine());
                   result1 = Math.Sqrt(valor);
                   Console.WriteLine($"= {result1}");
+                  Console.WriteLine("Pressione enter: ");
+                  Console.ReadKey();
                   Environment.Exit(-1);
                   break;
              }
